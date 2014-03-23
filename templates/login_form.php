@@ -4,7 +4,7 @@
         <? 
         if(isset($submittedform)){
             print_r($submittedform); 
-        } else { print("error");}
+        } else { print("no flight booking request submitted - dry login?");}
         ?>
         </strong>
     </div>
