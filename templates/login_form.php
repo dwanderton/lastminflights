@@ -20,6 +20,11 @@
                 <div class="form-group">
                     <input class="form-control" name="password" placeholder="Password" type="password"/>
                 </div>
+                <? if(isset($submittedform)){ ?>
+                        <input type="hidden" name="submittedform" value="true"/>
+                        <?foreach ($submittedform as $key => $value) {?>
+                            <input type="hidden" name="<?=$key ?>" value="<?=$value?>"/>
+                <? }} ?>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Log In</button>
                 </div>
@@ -37,6 +42,11 @@
                     <input class="form-control" name="password" placeholder="Password" type="password"/>
                     <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password"/>
                 </div>
+                <? if(isset($submittedform)){ ?>
+                        <input type="hidden" name="submittedform" value="true"/>
+                        <? foreach ($submittedform as $key => $value) {?>
+                            <input type="hidden" name="<?=$key ?>" value="<?=$value?>"/>
+                <? }} ?>
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Register</button>
                 </div>
