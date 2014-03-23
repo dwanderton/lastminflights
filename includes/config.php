@@ -19,7 +19,7 @@
     session_start();
 
     // require authentication for most pages
-    if (!preg_match("{(?:login|logout|index|register)\.php$}", $_SERVER["PHP_SELF"]))
+    if (!preg_match("{(?:login|logout|index|flightquote|register)\.php$}", $_SERVER["PHP_SELF"]))
     {
         if (empty($_SESSION["id"]))
         {

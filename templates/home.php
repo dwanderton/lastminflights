@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xs-12">
         <div>
-            <? if(isset($_SESSION["id"])){?><h4>Logged In</h4><?}else{ ?><<h4>Logged Out</h4><?}?>
+            <? if(isset($_SESSION["id"])){?><h4>Logged In</h4><?}else{ ?><h4>Logged Out</h4><?}?>
             <br/>
             <br/>
         </div>

@@ -4,7 +4,7 @@
         <? 
         if(isset($submittedform)){
             print_r($submittedform); 
-        }
+        } else { print("error");}
         ?>
         </strong>
     </div>
@@ -30,15 +30,15 @@
         <h4>Register Below</h4>
         <form action="register.php" method="post">
             <fieldset>
-                <div class="control-group">
-                    <input autofocus name="username" placeholder="Username" type="text"/>
+                <div class="form-group">
+                    <input class="form-control" name="username" placeholder="Username" type="text"/>
                 </div>
-                <div class="control-group">
-                    <input name="password" placeholder="Password" type="password"/>
-                    <input name="confirmation" placeholder="Confirm Password" type="password"/>
+                <div class="form-group">
+                    <input class="form-control" name="password" placeholder="Password" type="password"/>
+                    <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password"/>
                 </div>
-                <div class="control-group">
-                    <button type="submit" class="btn-primary">Register</button>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Register</button>
                 </div>
             </fieldset>
         </form>
