@@ -52,6 +52,11 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <? if(isset($_SESSION["admin"])){ 
+              if($_SESSION["admin"]===1){?>
+              <li class="active"><a href="#">Admin</a></li>
+              <?}   
+            }?>
             <? if(isset($_SESSION["id"])){ ?>
             <li><a href="triplist.php">My Trips</a></li>
             <li><a href="logout.php">Logout</a></li>
