@@ -1,9 +1,5 @@
        <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          <ul style="margin-top:50px;" class="nav nav-sidebar">
-            <li class="active"><a href="admin.php">Flight Requests</a></li>
-            <li><a href="quote.php">Quotations</a></li>
-          </ul>
         </div>
         <div class="col-sm-9  col-md-10">
           <h1 class="page-header">Flight Requests</h1>

@@ -18,7 +18,11 @@
         <script src="/js/jquery-1.10.2.min.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/scripts.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css'>
         <style>
+        *{
+            font-family: 'Gafata', sans-serif;
+        }
         .ChatList
         {
             overflow-y:scroll;

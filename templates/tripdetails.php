@@ -77,17 +77,23 @@
         </table>
         
         <? } else { if($_SESSION["admin"]){?>
+        <form  action="quote.php" method="post">
         <fieldset>
         <table class="table">
         <thead><td></td><td># of people</td><td>Cost per person</td><thead>
         <tbody>
-        <tr><td>Adults</td><td><?=$trip['adults']?></td><td>$<input type="text" class="form-control"></td></tr>
-        <tr><td>Children</td><td><?=$trip['children']?></td><td>$<input type="text" class="form-control"></td></tr>
-        <tr><td>Seniors</td><td><?=$trip['seniors']?></td><td>$<input type="text" class="form-control"></td></tr>
+        <tr><td>Adults</td><td><?=$trip['adults']?></td><td>$&nbsp;<input name="adultprice" type="text" class="form-control"></td></tr>
+        <tr><td>Children</td><td><?=$trip['children']?></td><td>$&nbsp;<input name="childprice" type="text" class="form-control"></td></tr>
+        <tr><td>Seniors</td><td><?=$trip['seniors']?></td><td>$&nbsp;<input name="seniorprice" type="text" class="form-control"></td></tr>
         </tbody>
         </table>
+        <? foreach ($trip as $key => $value) {?>
+         <input type="hidden" name="<?=$key ?>" value="<?=$value?>"/>
+         <? }?>
+         <input type="hidden" name="tripid" value="<?=$trip['id']?>"/>
         <button type="submit" class="btn btn-default">Submit Quote</button>
         </fieldset>
+        </form>
         <?}?>
         <h4><small>One of our customer service representatives is currently reviewing your request. Once this has been reviewed this space will update with your quotation</small></h4>
         <? }?>
