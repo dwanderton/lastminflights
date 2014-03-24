@@ -30,6 +30,11 @@
             {
                 // remember that user's now logged in by storing user's ID in session
                 $_SESSION["id"] = $row["id"];
+                
+                //check if user is an admin and set session variable
+                if ($row["admin"] === 1){
+                    $_SESSION["admin"] = $row["admin"];
+                }
 
                 // submit any booking request and provide confirmation
                 if(isset($_POST['submittedform'])){
