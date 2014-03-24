@@ -72,7 +72,7 @@
         <tr><td>Adults</td><td><?=$trip['adults']?></td><td>$<?=number_format($quote['adultprice'], 2, '.', '')?></td></tr>
         <tr><td>Children</td><td><?=$trip['children']?></td><td>$<?=number_format($quote['childprice'], 2, '.', '')?></td></tr>
         <tr><td>Seniors</td><td><?=$trip['seniors']?></td><td>$<?=number_format($quote['seniorprice'], 2, '.', '')?></td></tr>
-        <tr><td><strong>Total</strong></td><td><strong><?=$trip['adults']+$trip['children']+$trip['seniors']?></strong></td><td><strong>$<?=number_format(($quote['seniorprice']+$quote['childprice']+$quote['seniorprice']), 2, '.', '')?></strong></td></tr>
+        <tr><td><strong>Total</strong></td><td><strong><?=$trip['adults']+$trip['children']+$trip['seniors']?></strong></td><td><strong>$<?=number_format(($quote['adultprice']+$quote['childprice']+$quote['seniorprice']), 2, '.', '')?></strong></td></tr>
         </tbody>
         </table>
         
