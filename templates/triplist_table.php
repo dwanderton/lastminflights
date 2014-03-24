@@ -26,7 +26,7 @@
                        <td><?php print $line["departdate"];?></td>
                        <td><?php print $line["type"];?></td>
                        <td><?php print $line["class"];?></td>
-                       <td>Actions Here</td>
+                       <td><a href="triplist.php?tripid=<?=$line["id"]?>">Details</a><br/>Actions Here</td>
                     </tr>
             <?php } ?>
             </tbody>

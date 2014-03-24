@@ -19,37 +19,35 @@
                   <option selected="selected">Economy/Coach</option>
                   <option>Business Class</option>
                   <option>First Class</option>
-                </select>            
-            </div>
-            <div class="form-group">
+                </select>
                 <label for="type">Type:</label>
                 <select name="type" class="form-control">
                   <option selected="selected">Round-Trip</option>
                   <option>One Way</option>
-                </select>            
+                </select>                 
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Departing from:</label>
-                <input type="" name="departingfrom" class="form-control" id="exampleInputEmail1" placeholder="Enter Airport Name/Code">
+                <label for="depart">Departing from:</label>
+                <input type="" name="departingfrom" class="form-control" id="depart" placeholder="Enter Airport Name/Code">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Going to:</label>
-                <input type="" name="goingto" class="form-control" id="exampleInputPassword1" placeholder="Enter Airport Name/Code">
+                <label for="goingto">Going to:</label>
+                <input type="" name="goingto" class="form-control" id="goingto" placeholder="Enter Airport Name/Code">
+            </div>
+            <div class="form-group">
+            <label for="nonstop">Prefer non-stop:</label>
+                <input type="checkbox" name="nonstop" class="form-control">
             </div>
             <div class="form-group">
                 <label for="departdate">Depart:</label>
                 <input type="date" name="departdate" class="form-control" id="departdate" placeholder="dd/mm/yy">
-            </div>
-            <div class="form-group">
-                <label for="departtime">Depart Time:</label>
+                <label for="departtime">Time:</label>
                 <input type="time" name="departtime" class="form-control" id="departtime" placeholder="Anytime">
             </div>
             <div class="form-group">
                 <label for="returndate">Return:</label>
                 <input type="date" name="returndate" class="form-control" id="returndate" placeholder="dd/mm/yy">
-            </div>
-            <div class="form-group">
-                <label for="returntime">Return Time:</label>
+                <label for="returntime">Time:</label>
                 <input type="time" name="returntime" class="form-control" id="returntime" placeholder="Anytime">
             </div>
             <div class="form-group">
@@ -64,6 +62,9 @@
                 <label for="seniors">Seniors:</label>
                 <input type="number" name="seniors" class="form-control" id="seniors" placeholder="">
             </div>
+            <div class="form-group">
+                    <textarea maxlength="200" style="width:85%; min-height:150px;resize:none;" name="additional" class="form-control" placeholder="Any additional information/requests"></textarea>
+                </div>
             <button type="submit" class="btn btn-default">Submit</button>
         </form>
     </div>
