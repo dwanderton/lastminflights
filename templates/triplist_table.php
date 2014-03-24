@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <table class="table table-striped table-bordered" id="table-portfolio">
+        <table class="table table-striped table-bordered" id="table-triplist">
             <thead>
                 <tr>
                     <th>Trip ID</th>
