@@ -2,6 +2,8 @@
     <div class="col-xs-12">
         <div>
             <? if(isset($_SESSION["id"])){?><h4>Logged In</h4><?}else{ ?><h4>Logged Out</h4><?}?>
+            <p class="lead"><? if(isset($flightrequested)){print_r($flightrequested);} ?></p>
+            
             <br/>
             <br/>
         </div>

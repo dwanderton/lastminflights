@@ -41,8 +41,9 @@
                             apologize("username already exists!");
                         }
                     $rows = query("SELECT LAST_INSERT_ID() AS id");
-                    $flightrequested = $rows[0];
-                    $flightrequestedid = $flightrequest["id"];
+                    
+                    $lastinsert= query("SELECT * FROM flightrequest WHERE id = ?",$rows[0]["id"]);
+                    $flightrequested= $lastinsert[0];
                     render("home.php", ["title" => "Request Received", "flightrequested" => $flightrequested]);
                 } else {
                     redirect("/");
