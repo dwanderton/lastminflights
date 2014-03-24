@@ -2,7 +2,7 @@
 
     // configuration
     require("../includes/config.php"); 
-
+    
     // if form was submitted
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -33,8 +33,7 @@
 
                 // submit any booking request and provide confirmation
                 if(isset($_POST['submittedform'])){
-                    //$submit = query("INSERT INTO flightrequest (userid, class, type, depart, to, departdate, returndate, departtime, returntime, adults, seniors, children) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $_SESSION["id"], $_POST["class"], $_POST["type"], $_POST["departingfrom"], $_POST["goingto"], $_POST["departdate"], $_POST["returndate"], $_POST["departtime"], $_POST["returntime"], $_POST["adults"], $_POST["seniors"], $_POST["children"]);
-                    $submit = query("INSERT INTO flightrequest (userid, class, type, depart, adults, children, seniors, departdate, returndate, departtime, returntime, goingto) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $_SESSION["id"], $_POST["class"], $_POST["type"], $_POST["departingfrom"], $_POST["adults"], $_POST["children"], $_POST["seniors"], $_POST["departdate"], $_POST["returndate"], $_POST["departtime"], $_POST["returntime"], $_POST["goingto"]);
+                        $submit = query("INSERT INTO flightrequest (userid, class, type, depart, adults, children, seniors, departdate, returndate, departtime, returntime, goingto) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $_SESSION["id"], $_POST["class"], $_POST["type"], $_POST["departingfrom"], $_POST["adults"], $_POST["children"], $_POST["seniors"], $_POST["departdate"], $_POST["returndate"], $_POST["departtime"], $_POST["returntime"], $_POST["goingto"]);
                     
                     if ($submit === false)
                         {
@@ -44,7 +43,7 @@
                     
                     $lastinsert= query("SELECT * FROM flightrequest WHERE id = ?",$rows[0]["id"]);
                     $flightrequested= $lastinsert[0];
-                    render("home.php", ["title" => "Request Received", "flightrequested" => $flightrequested]);
+                    render("confirm.php", ["title" => "Request Received", "flightrequested" => $flightrequested]);
                 } else {
                     redirect("/");
                 }
