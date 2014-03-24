@@ -53,7 +53,7 @@
                     <input class="form-control" name="phone" placeholder="Phone Number"/>
                 </div>
                 <div class="form-group">
-                    <textarea style="width:85%; min-height:150px;resize:none;" name="additional" class="form-control" placeholder="Any additional information/requests"></textarea>
+                    <textarea maxlength="200" style="width:85%; min-height:150px;resize:none;" name="additional" class="form-control" placeholder="Any additional information/requests"></textarea>
                 </div>
                 
                 
