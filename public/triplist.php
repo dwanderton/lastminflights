@@ -34,6 +34,31 @@
                 } else {
                     $quote = false;
                 }
+                //find out trip users id
+                $id = query("SELECT * FROM flightrequest WHERE id = ? LIMIT 1", $_GET['tripid']);
+                if ($id === false)
+                {
+                    apologize("Unfortunately there is an error, please try again.");
+                }
+                 if(isset($id[0]))
+                {
+                    $id = $id[0];
+                } else {
+                    $id = false;
+                }
+                
+                $contact = query("SELECT * FROM userdetails WHERE userid = ? LIMIT 1", $id['userid']);
+                if ($contact === false)
+                {
+                    apologize("Unfortunately there is an error, please try again.");
+                }
+                //only one row should be returned
+                if(isset($contact[0]))
+                {
+                    $contact = $contact[0];
+                } else {
+                    $contact = false;
+                }
               }   
         } else { 
         // normal query
@@ -63,10 +88,35 @@
                 } else {
                     $quote = false;
                 }
+                                //find out trip users id
+                $id = query("SELECT * FROM flightrequest WHERE id = ? LIMIT 1", $_GET['tripid']);
+                if ($id === false)
+                {
+                    apologize("Unfortunately there is an error, please try again.");
+                }
+                 if(isset($id[0]))
+                {
+                    $id = $id[0];
+                } else {
+                    $id = false;
+                }
+                
+                $contact = query("SELECT * FROM userdetails WHERE userid = ? LIMIT 1", $id['userid']);
+                if ($contact === false)
+                {
+                    apologize("Unfortunately there is an error, please try again.");
+                }
+                //only one row should be returned
+                if(isset($contact[0]))
+                {
+                    $contact = $contact[0];
+                } else {
+                    $contact = false;
+                }
         }
 	//get trip id details where user = userid - stop unauthorised access unless admin
 	
-	render("tripdetails.php",["title"=> "Trip " .$_GET['tripid'] ." details", "trip" => $trip, "quote" => $quote]);
+	render("tripdetails.php",["title"=> "Trip " .$_GET['tripid'] ." details", "trip" => $trip, "quote" => $quote, "contact"=> $contact]);
 	exit;
 	}
 	

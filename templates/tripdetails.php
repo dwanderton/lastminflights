@@ -97,6 +97,26 @@
         <?}?>
         <h4><small>One of our customer service representatives is currently reviewing your request. Once this has been reviewed this space will update with your quotation</small></h4>
         <? }?>
+        <? if($_SESSION["admin"]){ ?>
+        <h4>Conact Details<h4>
+        <br/>
+        <table style="margin: 0 auto;">
+            <tbody>
+            <tr>
+            <td><strong>Name:</strong></td>
+            <td>&nbsp;<? print(htmlspecialchars($contact['salutation']));?>&nbsp;<? print(htmlspecialchars($contact['fullname']));?></td>
+            </tr>
+            <tr>
+            <td><strong>Email:</strong></td>
+            <td>&nbsp;<? print(htmlspecialchars($contact['email']));?></td>
+            </tr>
+            <tr>
+            <td><strong>Phone:</strong></td>
+            <td>&nbsp;<? print(htmlspecialchars($contact['phone']));?></td>
+            </tr>
+            </tbody>
+        </table>   
+        <?}?>  
         <br/>
         <h4>Customer Service Chat</h4>
         <div class="ChatList" style="width:80%; margin: 0 auto;">

@@ -1,7 +1,5 @@
        <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar">
-        </div>
-        <div class="col-sm-9  col-md-10">
+        <div class="col-sm-12  col-md-12">
           <h1 class="page-header">Flight Requests</h1>
 
           <div class="table-responsive">
