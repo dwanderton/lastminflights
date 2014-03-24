@@ -11,7 +11,7 @@
 
 <div class="row">
     <div class="col-sm-6">
-    Great your flight is confirmed. Details are below:
+    Great your flight is confirmed. A member of our team will be in touch shortly. Details are below:
     <p><? if(isset($flightrequested)){print_r($flightrequested);} ?></p>
             
     </div>

@@ -37,7 +37,7 @@
                     
                     if ($submit === false)
                         {
-                            apologize("username already exists!");
+                            apologize("unfortunately an error occured, please try again.");
                         }
                     $rows = query("SELECT LAST_INSERT_ID() AS id");
                     

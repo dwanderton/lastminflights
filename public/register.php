@@ -28,8 +28,23 @@
         $rows = query("SELECT LAST_INSERT_ID() AS id"); 
         $id = $rows[0]["id"];
         $_SESSION["id"] = $id;
-        redirect("index.php");
-        // TODO
+         // submit any booking request and provide confirmation
+                if(isset($_POST['submittedform'])){
+                        $submit = query("INSERT INTO flightrequest (userid, class, type, depart, adults, children, seniors, departdate, returndate, departtime, returntime, goingto) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", $_SESSION["id"], $_POST["class"], $_POST["type"], $_POST["departingfrom"], $_POST["adults"], $_POST["children"], $_POST["seniors"], $_POST["departdate"], $_POST["returndate"], $_POST["departtime"], $_POST["returntime"], $_POST["goingto"]);
+                    
+                    if ($submit === false)
+                        {
+                            apologize("unfortunately an error occured, please try again.");
+                        }
+                    $rows = query("SELECT LAST_INSERT_ID() AS id");
+                    
+                    $lastinsert= query("SELECT * FROM flightrequest WHERE id = ?",$rows[0]["id"]);
+                    $flightrequested= $lastinsert[0];
+                    render("confirm.php", ["title" => "Request Received", "flightrequested" => $flightrequested]);
+                } else {
+                    redirect("/");
+                }
+                exit;
     }
     else
     {

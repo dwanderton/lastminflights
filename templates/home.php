@@ -69,7 +69,7 @@
     </div>
     <div class="col-sm-6">
     <p>Some Lorem Ipsum text here about the history of everybody and everything in the world.</p>
-    <? if(isset($_SESSION["id"])){?><a href="logout.php">Log Out</a><?}else{ ?><a href="login.php">Log In</a><?}?>
+    <? if(isset($_SESSION["id"])){?><a href="triplist.php">View My Trips</a><br/><a href="logout.php">Log Out</a><?}else{ ?><a href="login.php">Log In</a><?}?>
     </div>
 </div>
 
