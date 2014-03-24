@@ -30,7 +30,7 @@
             </tr>
             <tr>
             <td><strong>Prefer Non-Stop:</strong></td>
-            <td><? if($trip['nonstop']==="on"){print("Yes");} else {print("No");}?></td>
+            <td><? if($trip['nonstop']=="on"){print("Yes");} else {print("No");}?></td>
             </tr>
             <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
             <tr>
@@ -56,7 +56,7 @@
             <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
             <tr>
             <td><strong>Additional Information:</strong></td>
-            <td><? if($trip['additional']==="") {print("n/a");}else{
+            <td><? if($trip['additional']=="") {print("n/a");}else{
             print(htmlspecialchars($trip['additional']));}?></td>
             </tr>
             </tbody>
@@ -169,7 +169,7 @@
                     <span>Test Data1</span>
                 </li>
                 <br/>
-                                <li class="ChatItem alert-success">
+                <li class="ChatItem alert-success">
                     <span>Test Data1</span>
                 </li>
                 <br/>

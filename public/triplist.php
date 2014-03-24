@@ -7,7 +7,7 @@
 	if(isset($_GET['tripid'])){
 	 //give admin unrestricted access to ids
         if(isset($_SESSION["admin"])){ 
-              if($_SESSION["admin"]===1){
+              
                 //admin query
                 $rows = query("SELECT * FROM flightrequest WHERE id = ?  LIMIT 1", $_GET['tripid']);
                 if ($rows === false)
@@ -59,7 +59,7 @@
                 } else {
                     $contact = false;
                 }
-              }   
+                 
         } else { 
         // normal query
          $rows = query("SELECT * FROM flightrequest WHERE id = ? AND userid = ?  LIMIT 1", $_GET['tripid'], $_SESSION["id"]);

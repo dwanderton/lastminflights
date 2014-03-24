@@ -32,7 +32,7 @@
                 $_SESSION["id"] = $row["id"];
                 
                 //check if user is an admin and set session variable
-                if ($row["admin"] === 1){
+                if ($row["admin"] == 1){
                     $_SESSION["admin"] = $row["admin"];
                 }
 
