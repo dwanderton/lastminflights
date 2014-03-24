@@ -1,12 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <strong>
-        <? 
-        if(isset($submittedform)){
-            print_r($submittedform); 
-        } else { print("no flight booking request submitted - dry login?");}
-        ?>
-        </strong>
+
     </div>
 </div>
 <div class="row">

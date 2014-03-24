@@ -76,7 +76,7 @@
         </tbody>
         </table>
         
-        <? } else { if($_SESSION["admin"]){?>
+        <? } else { if(isset($_SESSION["admin"])){?>
         <form  action="quote.php" method="post">
         <fieldset>
         <table class="table">
@@ -97,7 +97,7 @@
         <?}?>
         <h4><small>One of our customer service representatives is currently reviewing your request. Once this has been reviewed this space will update with your quotation</small></h4>
         <? }?>
-        <? if($_SESSION["admin"]){ ?>
+        <? if(isset($_SESSION["admin"])){ ?>
         <h4>Conact Details<h4>
         <br/>
         <table style="margin: 0 auto;">
