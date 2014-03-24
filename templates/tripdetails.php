@@ -1,7 +1,11 @@
 <div class="row">
     <div class="col-xs-12">
         <ol style="text-align:left; width:auto;" class="breadcrumb">
+          <? if(isset($_SESSION["admin"])){?>
+          <li><a href="admin.php">Admin Dashboard</a></li>
+          <?}else{?>
           <li><a href="triplist.php">My Trips</a></li>
+          <?}?>
           <li class="active">Trip ID: <? print(htmlspecialchars($trip['id']));?></li>
         </ol>
     </div>
@@ -60,6 +64,34 @@
     </div>
     <div class="col-md-6">
         <h4>Quotation</h4>
+        <h4><small>Ticket Cost per person. All prices US Dollars and inclusive of all taxes and fees.</small></h4>
+        <? if($quote){ ?>
+        <table class="table">
+        <thead><td></td><td># of people</td><td>Cost per person</td><thead>
+        <tbody>
+        <tr><td>Adults</td><td><?=$trip['adults']?></td><td>$<?=number_format($quote['adultprice'], 2, '.', '')?></td></tr>
+        <tr><td>Children</td><td><?=$trip['children']?></td><td>$<?=number_format($quote['childprice'], 2, '.', '')?></td></tr>
+        <tr><td>Seniors</td><td><?=$trip['seniors']?></td><td>$<?=number_format($quote['seniorprice'], 2, '.', '')?></td></tr>
+        <tr><td><strong>Total</strong></td><td><strong><?=$trip['adults']+$trip['children']+$trip['seniors']?></strong></td><td><strong>$<?=number_format(($quote['seniorprice']+$quote['childprice']+$quote['seniorprice']), 2, '.', '')?></strong></td></tr>
+        </tbody>
+        </table>
+        
+        <? } else { if($_SESSION["admin"]){?>
+        <fieldset>
+        <table class="table">
+        <thead><td></td><td># of people</td><td>Cost per person</td><thead>
+        <tbody>
+        <tr><td>Adults</td><td><?=$trip['adults']?></td><td>$<input type="text" class="form-control"></td></tr>
+        <tr><td>Children</td><td><?=$trip['children']?></td><td>$<input type="text" class="form-control"></td></tr>
+        <tr><td>Seniors</td><td><?=$trip['seniors']?></td><td>$<input type="text" class="form-control"></td></tr>
+        </tbody>
+        </table>
+        <button type="submit" class="btn btn-default">Submit Quote</button>
+        </fieldset>
+        <?}?>
+        <h4><small>One of our customer service representatives is currently reviewing your request. Once this has been reviewed this space will update with your quotation</small></h4>
+        <? }?>
+        <br/>
         <h4>Customer Service Chat</h4>
         <div class="ChatList" style="width:80%; margin: 0 auto;">
             <ul class="list-inline list-group">

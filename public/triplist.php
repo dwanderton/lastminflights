@@ -21,8 +21,21 @@
                 } else {
                     apologize("Unfortunately there is no trip with that id, please try again.");
                 }
+                //get quotes
+                $quotes = query("SELECT * FROM quote WHERE tripid = ? LIMIT 1", $_GET['tripid']);
+                if ($quotes === false)
+                {
+                    apologize("Unfortunately there is an error, please try again.");
+                }
+                //only one row should be returned
+                if(isset($quotes[0]))
+                {
+                    $quote = $quotes[0];
+                } else {
+                    $quote = false;
+                }
               }   
-        } else {
+        } else { 
         // normal query
          $rows = query("SELECT * FROM flightrequest WHERE id = ? AND userid = ?  LIMIT 1", $_GET['tripid'], $_SESSION["id"]);
             if ($rows === false)
@@ -36,10 +49,24 @@
                 } else {
                     apologize("Unfortunately you have no trip with that id, please try again.");
                 }
+                
+                
+                $quotes = query("SELECT * FROM quote WHERE tripid = ? LIMIT 1", $_GET['tripid']);
+                if ($quotes === false)
+                {
+                    apologize("Unfortunately there is an error, please try again.");
+                }
+                //only one row should be returned
+                if(isset($quotes[0]))
+                {
+                    $quote = $quotes[0];
+                } else {
+                    $quote = false;
+                }
         }
 	//get trip id details where user = userid - stop unauthorised access unless admin
 	
-	render("tripdetails.php",["title"=> "Trip " .$_GET['tripid'] ." details", "trip" => $trip]);
+	render("tripdetails.php",["title"=> "Trip " .$_GET['tripid'] ." details", "trip" => $trip, "quote" => $quote]);
 	exit;
 	}
 	

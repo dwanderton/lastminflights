@@ -1,10 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
         <div>
-            <? if(isset($_SESSION["id"])){?><h4>Logged In</h4><?}else{ ?><h4>Logged Out</h4><?}?>
-            <p class="lead"><? if(isset($flightrequested)){print_r($flightrequested);} ?></p>
-            
-            <br/>
             <br/>
         </div>
     </div>
@@ -30,11 +26,11 @@
             </div>
             <div class="form-group">
                 <label for="depart">Departing from:</label>
-                <input type="" name="departingfrom" class="form-control" id="depart" placeholder="Enter Airport Name/Code">
+                <input type="" name="departingfrom" class="form-control" id="depart" placeholder="Enter Airport Name">
             </div>
             <div class="form-group">
                 <label for="goingto">Going to:</label>
-                <input type="" name="goingto" class="form-control" id="goingto" placeholder="Enter Airport Name/Code">
+                <input type="" name="goingto" class="form-control" id="goingto" placeholder="Enter Airport Name">
             </div>
             <div class="form-group">
             <label for="nonstop">Prefer non-stop:</label>
@@ -72,7 +68,6 @@
     </div>
     <div class="col-sm-6">
     <p>Some Lorem Ipsum text here about the history of everybody and everything in the world.</p>
-    <? if(isset($_SESSION["id"])){?><a href="triplist.php">View My Trips</a><br/><a href="logout.php">Log Out</a><?}else{ ?><a href="login.php">Log In</a><?}?>
     </div>
 </div>
 

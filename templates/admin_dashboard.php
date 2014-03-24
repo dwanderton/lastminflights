@@ -38,8 +38,7 @@
                        <td><?php print $line["class"];?></td>
                        <td>
                        
-                        <a href="triplist.php?tripid=<?=$line["id"]?>">Details</a><br/>
-                        <a href="quote.php?tripid=<?=$line["id"]?>">Send Quotation</a>
+                        <a href="triplist.php?tripid=<?=$line["id"]?>">Details</a>
                        
                        </td>
                     </tr>
