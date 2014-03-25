@@ -82,9 +82,9 @@
         <table class="table">
         <thead><td></td><td># of people</td><td>Cost per person</td><thead>
         <tbody>
-        <tr><td>Adults</td><td><?=$trip['adults']?></td><td>$&nbsp;<input name="adultprice" type="text" class="form-control"></td></tr>
-        <tr><td>Children</td><td><?=$trip['children']?></td><td>$&nbsp;<input name="childprice" type="text" class="form-control"></td></tr>
-        <tr><td>Seniors</td><td><?=$trip['seniors']?></td><td>$&nbsp;<input name="seniorprice" type="text" class="form-control"></td></tr>
+        <tr><td>Adults</td><td><?=$trip['adults']?></td><td>$&nbsp;<input style="width:90px;" name="adultprice" type="text" class="form-control"></td></tr>
+        <tr><td>Children</td><td><?=$trip['children']?></td><td>$&nbsp;<input style="width:90px;"  name="childprice" type="text" class="form-control"></td></tr>
+        <tr><td>Seniors</td><td><?=$trip['seniors']?></td><td>$&nbsp;<input style="width:90px;"  name="seniorprice" type="text" class="form-control"></td></tr>
         </tbody>
         </table>
         <? foreach ($trip as $key => $value) {?>
@@ -121,18 +121,17 @@
         <h4>Customer Service Chat</h4>
         <div class="ChatList" style="width:80%; margin: 0 auto;">
             <ul class="list-inline list-group">
-            <? if(isset($chat)){
-            foreach ($chat as $chit) {
+            <? if(isset($chat[0])){foreach ($chat as $chit) {
                 if($chit['admin']){?>
             
                 <li class="ChatItem alert-success">
                      <span>
-                        <div class="row" style="padding:4px;">
-                         <div class="col-xs-3"
-                            <strong><?=$chit['timestamp']?>&nbsp;&nbsp;&nbsp;</strong>
+                        <div class="row" style="padding:1px;">
+                         <div class="col-xs-4"
+                            <strong><?=$chit['timestamp']?>&nbsp;</strong>
                          </div>
                         
-                        <div class="col-xs-9"><?= $chit['message']?></div>
+                        <div class="col-xs-8"><?= $chit['message']?></div>
                        </div>
                     </span>
                 </li>
@@ -142,16 +141,16 @@
                 <li class="ChatItem alert-info">
                     <span>
                         <div class="row">
-                         <div class="col-xs-3"
-                            <strong><?=$chit['timestamp']?>&nbsp;&nbsp;&nbsp;</strong>
+                         <div class="col-xs-4"
+                            <strong><?=$chit['timestamp']?>&nbsp;</strong>
                          </div>
                         
-                        <div class="col-xs-9"><?= $chit['message']?></div>
+                        <div class="col-xs-8"><?= $chit['message']?></div>
                        </div>
                     </span>
                 </li>
                 <br/>
-                <?}}}?>
+                <?}}}else{?> <h4><small>No chat messages</small></h4> <?}?>
             </ul>
         </div>
         <br/>
