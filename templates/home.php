@@ -101,15 +101,15 @@
             </div>
             <div class="form-group">
                 <label for="adults">Adults:</label>
-                <input type="number" name="adults" class="form-control" id="adults" placeholder="" required>
+                <input type="number" name="adults" class="form-control" id="adults" placeholder="" min="0" required>
             </div>
             <div class="form-group">
                 <label for="children">Children:</label>
-                <input type="number" name="children" class="form-control" id="children" placeholder="" required>
+                <input type="number" name="children" class="form-control" id="children" placeholder="" min="0" required>
             </div>
             <div class="form-group">
                 <label for="seniors">Seniors:</label>
-                <input type="number" name="seniors" class="form-control" id="seniors" placeholder="" required>
+                <input type="number" name="seniors" class="form-control" id="seniors" placeholder="" min="0" required>
             </div>
             <div class="form-group">
                     <textarea maxlength="200" style="width:85%; min-height:150px;resize:none;" name="additional" class="form-control" placeholder="Any additional information/requests"></textarea>
