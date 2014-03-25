@@ -9,10 +9,10 @@
         <form action="login.php" method="post">
             <fieldset>
                 <div class="form-group">
-                    <input autofocus class="form-control" name="username" placeholder="Username" type="text"/>
+                    <input autofocus class="form-control" name="username" placeholder="Username" type="text" required/>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" name="password" placeholder="Password" type="password"/>
+                    <input class="form-control" name="password" placeholder="Password" type="password" required/>
                 </div>
                 <? if(isset($submittedform)){ ?>
                         <input type="hidden" name="submittedform" value="true"/>
@@ -30,21 +30,21 @@
         <form action="register.php" method="post">
             <fieldset>
                 <div class="form-group">
-                    <input class="form-control" name="username" placeholder="Username" type="text"/>
+                    <input class="form-control" name="username" placeholder="Username" type="text" required/>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" name="password" placeholder="Password" type="password"/>
-                    <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password"/>
+                    <input class="form-control" name="password" placeholder="Password" type="password" required/>
+                    <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password" required/>
                 </div>
                 <div class="form-group">
-                    <select  name="salutation" class="form-control">
+                    <select  name="salutation" class="form-control" required>
                         <option selected="selected" value="">Title</option><option>Mr.</option><option>Mrs.</option>
                     </select>
                     <input class="form-control" name="fullname" placeholder="Full Name" type="text"/>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" name="email" placeholder="Email Address" type="email"/>
-                    <input class="form-control" name="phone" placeholder="Phone Number"/>
+                    <input class="form-control" name="email" placeholder="Email Address" type="email" required/>
+                    <input class="form-control" name="phone" placeholder="Phone Number" required/>
                 </div>
                 
                 
