@@ -14,6 +14,8 @@
     // requirements
     require("constants.php");
     require("functions.php");
+    require_once("PHPMailer/class.phpmailer.php");
+    
 
     // enable sessions
     session_start();

@@ -40,13 +40,64 @@
                 <label for="departdate">Depart:</label>
                 <input type="date" name="departdate" class="form-control" id="departdate" placeholder="dd/mm/yy" required>
                 <label for="departtime">Time:</label>
-                <input type="time" name="departtime" class="form-control" id="departtime" placeholder="Anytime" required>
+                <select name="departtime" class="form-control" id="departtime">
+                    <option value="Any" selected="selected">Any</option>
+                    <option value="01:00">1:00am</option>
+                    <option value="02:00">2:00am</option>
+                    <option value="03:00">3:00am</option>
+                    <option value="04:00">4:00am</option>
+                    <option value="05:00">5:00am</option>
+                    <option value="06:00">6:00am</option>
+                    <option value="07:00">7:00am</option>
+                    <option value="08:00">8:00am</option>
+                    <option value="09:00">9:00am</option>
+                    <option value="10:00">10:00am</option>
+                    <option value="11:00">11:00am</option>
+                    <option value="12:00">Noon</option>
+                    <option value="13:00">1:00pm</option>
+                    <option value="14:00">2:00pm</option>
+                    <option value="15:00">3:00pm</option>
+                    <option value="16:00">4:00pm</option>
+                    <option value="17:00">5:00pm</option>
+                    <option value="18:00">6:00pm</option>
+                    <option value="19:00">7:00pm</option>
+                    <option value="20:00">8:00pm</option>
+                    <option value="21:00">9:00pm</option>
+                    <option value="22:00">10:00pm</option>
+                    <option value="23:00">11:00pm</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="returndate">Return:</label>
                 <input type="date" name="returndate" class="form-control" id="returndate" placeholder="dd/mm/yy" required>
                 <label for="returntime">Time:</label>
-                <input type="time" name="returntime" class="form-control" id="returntime" placeholder="Anytime" required>
+                <select name="returntime" class="form-control" id="returntime">
+                    <option value="Any" selected="selected">Any</option>
+                    <option value="01:00">1:00am</option>
+                    <option value="02:00">2:00am</option>
+                    <option value="03:00">3:00am</option>
+                    <option value="04:00">4:00am</option>
+                    <option value="05:00">5:00am</option>
+                    <option value="06:00">6:00am</option>
+                    <option value="07:00">7:00am</option>
+                    <option value="08:00">8:00am</option>
+                    <option value="09:00">9:00am</option>
+                    <option value="10:00">10:00am</option>
+                    <option value="11:00">11:00am</option>
+                    <option value="12:00">Noon</option>
+                    <option value="13:00">1:00pm</option>
+                    <option value="14:00">2:00pm</option>
+                    <option value="15:00">3:00pm</option>
+                    <option value="16:00">4:00pm</option>
+                    <option value="17:00">5:00pm</option>
+                    <option value="18:00">6:00pm</option>
+                    <option value="19:00">7:00pm</option>
+                    <option value="20:00">8:00pm</option>
+                    <option value="21:00">9:00pm</option>
+                    <option value="22:00">10:00pm</option>
+                    <option value="23:00">11:00pm</option>
+                </select>
+                
             </div>
             <div class="form-group">
                 <label for="adults">Adults:</label>

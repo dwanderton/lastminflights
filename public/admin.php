@@ -4,8 +4,8 @@
     require("../includes/config.php");
     
 	if($_SESSION["id"]){
-	 if(isset($_SESSION["admin"])){ 
-              if($_SESSION["admin"]===1){
+	 if(isset($_SESSION["admin"])){ 	 
+	 
                 //admin query
 	            $rows = query("SELECT * FROM flightrequest ORDER BY id DESC");
                 if ($rows === false)
@@ -15,7 +15,7 @@
                 // else render form
                 render("admin_dashboard.php", ["title" => "Admin Panel", "flightrequest" => $rows]);
                 exit;
-              }
+              
           }
     }
     redirect("/");
