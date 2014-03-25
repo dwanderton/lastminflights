@@ -5,6 +5,9 @@
 	if($_SESSION["id"]){
 	//has a specific trip been requested?
 	if(isset($_GET['tripid'])){
+
+	    
+	    
 	 //give admin unrestricted access to ids
         if(isset($_SESSION["admin"])){ 
               
@@ -114,9 +117,70 @@
                     $contact = false;
                 }
         }
-	//get trip id details where user = userid - stop unauthorised access unless admin
 	
-	render("tripdetails.php",["title"=> "Trip " .$_GET['tripid'] ." details", "trip" => $trip, "quote" => $quote, "contact"=> $contact]);
+		    //chat message sent?
+	    if(isset($_POST['message'])){
+	        if(isset($_SESSION["admin"])){ $admin = 1; } else { $admin = 0; }
+	        //post chat message
+	        $chat = query("INSERT INTO chat (tripid, admin, authorid, message) VALUES(?, ?, ?, ?)", $_GET['tripid'], $admin, $_SESSION["id"], $_POST['message']);
+            if ($chat === false)
+            {
+            apologize("Unfortunately there is an error, please try again.");
+            }
+            if($admin){
+                //send email
+	                                $mail             = new PHPMailer();
+
+                                    $mail->IsSMTP(); // telling the class to use SMTP
+                                    //$mail->Host       = "mail.yourdomain.com"; // SMTP server
+                                    //$mail->SMTPDebug  = 2;                     // enables SMTP debug information (for testing)
+                                                                               // 1 = errors and messages
+                                                                               // 2 = messages only
+                                    $mail->SMTPAuth   = true;                  // enable SMTP authentication
+                                    $mail->SMTPSecure = "tls";                 // sets the prefix to the servier
+                                    $mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
+                                    $mail->Port       = 587;                   // set the SMTP port for the GMAIL server
+                                    $mail->Username   = "lastminflights85@gmail.com";  // GMAIL username
+                                    $mail->Password   = "lastmin85";            // GMAIL password
+
+                                    $mail->SetFrom('lastminflights85@gmail.com', 'Last Min Flights');
+
+                                    $mail->AddReplyTo("lastminflights85@gmail.com","Last Min Flights");
+                                    if(isset($contact['email'])){
+                                        $address = $contact['email'];
+                                    } else {
+                                        $address = "fail@none.none";
+                                    }
+                                    $mail->AddAddress($address);
+
+                                    $mail->WordWrap = 50;
+                                    $mail->Subject  = "New Message Received!";
+                                    
+                                    $mail->MsgHTML("<html><body><h1>Chat Message Received</h1>
+                                                    <h4>You have recieve a new chat message for trip id {$_GET['tripid']}. Login now to view!</body></html>    ");
+                                    
+
+                                    if(!$mail->Send()) {
+                                      //echo "Mailer Error: " . $mail->ErrorInfo;
+                                    } else {
+                                      //echo "Message sent!";
+                                    }
+            }
+  
+  
+  
+  
+	    }
+	//get chat messages
+	$chat = query("SELECT * FROM chat WHERE tripid = ? ORDER BY id", $_GET['tripid']);
+    if ($chat === false)
+    {
+      apologize("Unfortunately there is an error, please try again.");
+    }
+    //if no rows send false to template
+	if(!isset($chat[0])) { $chat= false;}
+	
+	render("tripdetails.php",["title"=> "Trip " .$_GET['tripid'] ." details", "trip" => $trip, "quote" => $quote, "contact"=> $contact, "chat" =>$chat]);
 	exit;
 	}
 	

@@ -121,79 +121,49 @@
         <h4>Customer Service Chat</h4>
         <div class="ChatList" style="width:80%; margin: 0 auto;">
             <ul class="list-inline list-group">
+            <? foreach ($chat as $chit) {
+                if($chit['admin']){?>
+            
                 <li class="ChatItem alert-success">
-                    <span>Test Data1</span>
+                     <span>
+                        <div class="row" style="padding:4px;">
+                         <div class="col-xs-3"
+                            <strong><?=$chit['timestamp']?>&nbsp;&nbsp;&nbsp;</strong>
+                         </div>
+                        
+                        <div class="col-xs-9"><?= $chit['message']?></div>
+                       </div>
+                    </span>
                 </li>
+            
                 <br/>
+                <?} else {?>
                 <li class="ChatItem alert-info">
-                    <span>Test Data1</span>
+                    <span>
+                        <div class="row">
+                         <div class="col-xs-3"
+                            <strong><?=$chit['timestamp']?>&nbsp;&nbsp;&nbsp;</strong>
+                         </div>
+                        
+                        <div class="col-xs-9"><?= $chit['message']?></div>
+                       </div>
+                    </span>
                 </li>
                 <br/>
-                <li class="ChatItem alert-success">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-info">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                                <li class="ChatItem alert-success">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-info">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-success">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-info">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-success">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-info">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-success">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-info">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-success">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-info">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-success">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
-                <li class="ChatItem alert-info">
-                    <span>Test Data1</span>
-                </li>
-                <br/>
+                <?}}?>
             </ul>
         </div>
         <br/>
+        <form action="triplist.php?tripid=<?=$trip['id']?>" method="post">
+        <fieldset>
         <div class="input-group" style="width:75%; margin: 0 auto;">
-                  <input type="text" style="width:100%!important;" class="form-control">
+                  <input type="text" name="message" style="width:100%!important;" class="form-control">
                   <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><i class="fa fa-envelope-o"></i></button>
+                    <button class="btn btn-default" type="submit"><i class="fa fa-envelope-o"></i></button>
                   </span>
         </div>
+        </fieldset>
+        </form>
     </div>
 </div>
 
@@ -230,3 +200,10 @@
         </table>
     </div>
 </div>
+<script>
+$(document).ready(function(){
+        $('.ChatList').animate({
+            scrollTop: $('.chat').scrollTop()+10000
+        }, 500);
+});
+</script>
