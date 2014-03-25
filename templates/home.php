@@ -25,12 +25,12 @@
                 </select>                 
             </div>
             <div class="form-group">
-                <label for="depart">Departing from:</label>
-                <input type="" name="departingfrom" class="form-control" id="depart" placeholder="Enter Airport Name">
+                <label id="departlabel" for="depart">Departing from:</label>
+                <input type="" name="departingfrom" class="form-control tags" id="depart" placeholder="Enter Airport Name" required>
             </div>
             <div class="form-group">
-                <label for="goingto">Going to:</label>
-                <input type="" name="goingto" class="form-control" id="goingto" placeholder="Enter Airport Name">
+                <label id="goinglabel" for="goingto">Going to:</label>
+                <input type="" name="goingto" class="form-control tags" id="goingto" placeholder="Enter Airport Name" required>
             </div>
             <div class="form-group">
             <label for="nonstop">Prefer non-stop:</label>
@@ -38,27 +38,27 @@
             </div>
             <div class="form-group">
                 <label for="departdate">Depart:</label>
-                <input type="date" name="departdate" class="form-control" id="departdate" placeholder="dd/mm/yy">
+                <input type="date" name="departdate" class="form-control" id="departdate" placeholder="dd/mm/yy" required>
                 <label for="departtime">Time:</label>
-                <input type="time" name="departtime" class="form-control" id="departtime" placeholder="Anytime">
+                <input type="time" name="departtime" class="form-control" id="departtime" placeholder="Anytime" required>
             </div>
             <div class="form-group">
                 <label for="returndate">Return:</label>
-                <input type="date" name="returndate" class="form-control" id="returndate" placeholder="dd/mm/yy">
+                <input type="date" name="returndate" class="form-control" id="returndate" placeholder="dd/mm/yy" required>
                 <label for="returntime">Time:</label>
-                <input type="time" name="returntime" class="form-control" id="returntime" placeholder="Anytime">
+                <input type="time" name="returntime" class="form-control" id="returntime" placeholder="Anytime" required>
             </div>
             <div class="form-group">
                 <label for="adults">Adults:</label>
-                <input type="number" name="adults" class="form-control" id="adults" placeholder="">
+                <input type="number" name="adults" class="form-control" id="adults" placeholder="" required>
             </div>
             <div class="form-group">
                 <label for="children">Children:</label>
-                <input type="number" name="children" class="form-control" id="children" placeholder="">
+                <input type="number" name="children" class="form-control" id="children" placeholder="" required>
             </div>
             <div class="form-group">
                 <label for="seniors">Seniors:</label>
-                <input type="number" name="seniors" class="form-control" id="seniors" placeholder="">
+                <input type="number" name="seniors" class="form-control" id="seniors" placeholder="" required>
             </div>
             <div class="form-group">
                     <textarea maxlength="200" style="width:85%; min-height:150px;resize:none;" name="additional" class="form-control" placeholder="Any additional information/requests"></textarea>

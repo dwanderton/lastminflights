@@ -11,7 +11,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-    <p class="lead">Great your flight is confirmed. A member of our team will be in touch shortly. Details are below:</p>
+    <p class="lead">Great your flight request is confirmed. A member of our team will be in touch shortly. Details are below:</p>
     <table style="margin: 0 auto;">
             <tbody>
             <tr>

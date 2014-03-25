@@ -38,7 +38,7 @@
                 </div>
                 <div class="form-group">
                     <select  name="salutation" class="form-control">
-                        <option selected="selected" value="0">Title</option><option>Mr.</option><option>Mrs.</option>
+                        <option selected="selected" value="">Title</option><option>Mr.</option><option>Mrs.</option>
                     </select>
                     <input class="form-control" name="fullname" placeholder="Full Name" type="text"/>
                 </div>
