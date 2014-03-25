@@ -121,7 +121,8 @@
         <h4>Customer Service Chat</h4>
         <div class="ChatList" style="width:80%; margin: 0 auto;">
             <ul class="list-inline list-group">
-            <? foreach ($chat as $chit) {
+            <? if(isset($chat)){
+            foreach ($chat as $chit) {
                 if($chit['admin']){?>
             
                 <li class="ChatItem alert-success">
@@ -150,7 +151,7 @@
                     </span>
                 </li>
                 <br/>
-                <?}}?>
+                <?}}}?>
             </ul>
         </div>
         <br/>
